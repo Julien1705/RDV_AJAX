@@ -1,0 +1,40 @@
+form {
+	font-family:arial;
+	font-size:12px;
+	width:350px;
+	margin:auto;
+}
+fieldset{
+	border:1px solid #F36;
+	background-color:#efefef;
+}
+legend {
+	color:#F36;
+	font-weight:bold;
+}
+.formulaire {
+	display:flex;
+	align-items:center;
+}
+.form label {
+	width:100px;
+	text-align:right;
+	margin-right:10px;
+}
+input[type="text"], input[type="email"] {
+	background-color:#f3f3f3;
+	border:1px solid #bbb;
+	padding:5px;
+}
+input[type="text"]:hover, input[type="email"]:hover {
+	background-color:#fff;
+	border:1px solid #f00;
+}
+input[type="submit"] {
+	background-color:#f3f3f3;
+	padding:10px;
+	border-radius:30px;
+}
+input[type="submit"]:hover {
+	color:#F36;
+}
