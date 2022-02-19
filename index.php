@@ -21,6 +21,10 @@
 
 <body>
 
+	<div class="alert alert-danger text-center" id="erreur_insertion" role="alert" style="display: none;">
+	
+	</div>
+
 	<form method="post" id="form">
 		<fieldset>
 			<legend>Vos coordonnées</legend>
@@ -191,10 +195,19 @@
 			},
 			dataType: "json",
 			success: function(data) {
-				$("#form").trigger("reset");
-				alertify.success(data.prenom + ` ` + data.nom + ` a été ajouté`);
+				if(data.REPONSE === "OK"){
+					$("#form").trigger("reset");
+					alertify.success(data.MESSAGE);
 
-				Affichage_Client();
+					Affichage_Client();
+				}
+				else{
+					$("#erreur_insertion").show();
+					$("#erreur_insertion").append("<h1> Liste des erreurs : </h1>")
+					for (let $erreur of data.MESS_ERR) {
+						$("#erreur_insertion").append($erreur + "<br>" ) ;
+					}
+				}
 
 			}
 		});
